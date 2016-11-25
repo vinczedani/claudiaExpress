@@ -35,6 +35,8 @@ return res.fail('[404] Resource not found');
 ```
 next - will call the next middleware when called without parameter, will call error handler when called with parameter.
 
+[err] - error object used in the error handler middlewares.
+
 ###TODOS:
 - create router module
 - add the project to npm
