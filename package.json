@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/vinczedani/claudiaExpress.git"
   },
-  "author": "",
+  "author": "Daniel Vincze <vinczedani22@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/vinczedani/claudiaExpress/issues"
