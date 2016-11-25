@@ -1,8 +1,8 @@
 # claudiaExpress
-Middleware and more scaleable routing support for claudia API builder
+Express like middleware support for claudia API builder
 
 ####Currently done:
-- minimal middleware support
+- middleware support
 - 4 param error handler middlewares
 
 ####Current usage:
@@ -21,6 +21,6 @@ api.get('/hello', middlewares((req, res, next) => {
 ```
 
 ###TODOS:
-- create router module,
+- create router module
 - add the project to npm
 - replace current 'manual' test, and write mocha tests
