@@ -21,17 +21,18 @@ api.get('/hello', middlewares((req, res, next) => {
   }))
 ```
 ###Middleware parameters:
-- req - the request object provided by claudia API builder
-- res - object containing end(data) and fail(err) functions
-- - end will send an ok (200) response with the data object
-- - fail will send a bad request (400) response with the err !stringified!
-- - error codes can be configured at the API gateway, with using regexps like .*\[404\].*
+req - the request object provided by claudia API builder
+res - object containing end(data) and fail(err) functions
+: -end will send an ok (200) response with the data object
+: -fail will send a bad request (400) response with the err !stringified!
+: -error codes can be configured at the API gateway, with using regexps like .*\[404\].*
 ```
 ...
 return res.fail('[404] Resource not found');
+// this will send an error response with status 404
 ...
 ```
-- - this will send an error response with status 404
+__next - will call the next middleware when called without parameter, will call error handler when called with parameter.__
 
 ###TODOS:
 - create router module
