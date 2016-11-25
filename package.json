@@ -1,0 +1,19 @@
+{
+  "name": "claudiaexpress",
+  "version": "1.0.0",
+  "description": "Middleware and more scaleable routing support for claudia API builder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinczedani/claudiaExpress.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinczedani/claudiaExpress/issues"
+  },
+  "homepage": "https://github.com/vinczedani/claudiaExpress#readme"
+}
