@@ -23,3 +23,4 @@ api.get('/hello', middlewares((req, res, next) => {
 ###TODOS:
 - create router module,
 - add the project to npm
+- replace current 'manual' test, and write mocha tests
