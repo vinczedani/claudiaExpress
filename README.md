@@ -39,6 +39,5 @@ next - will call the next middleware when called without parameter, will call er
 
 ###TODOS:
 - create router module
-- add the project to npm
 - replace current 'manual' test, and write mocha tests
 - upgrade response object to be more express like
