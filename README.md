@@ -32,7 +32,7 @@ return res.fail('[404] Resource not found');
 // this will send an error response with status 404
 ...
 ```
-__next - will call the next middleware when called without parameter, will call error handler when called with parameter.__
+next - will call the next middleware when called without parameter, will call error handler when called with parameter.
 
 ###TODOS:
 - create router module
