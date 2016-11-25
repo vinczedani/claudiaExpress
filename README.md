@@ -22,6 +22,7 @@ api.get('/hello', middlewares((req, res, next) => {
 ```
 ###Middleware parameters:
 req - the request object provided by claudia API builder
+
 res - object containing end(data) and fail(err) functions
 : -end will send an ok (200) response with the data object
 : -fail will send a bad request (400) response with the err !stringified!
