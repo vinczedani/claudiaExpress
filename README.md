@@ -26,7 +26,7 @@ req - the request object provided by claudia API builder
 res - object containing end(data) and fail(err) functions
 : -end will send an ok (200) response with the data object
 : -fail will send a bad request (400) response with the err !stringified!
-: -error codes can be configured at the API gateway, with using regexps like .*\[404\].*
+: -error codes can be configured at the API gateway, with using regexps like `.*\[404\].*`
 ```
 ...
 return res.fail('[404] Resource not found');
