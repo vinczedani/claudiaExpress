@@ -20,4 +20,4 @@ api.get('/hello', middlewares((req, res, next) => {
 ###TODOS:
 - create router module,
 - add the project to npm
-- write readme/docs
+- recognize and use error handler(/4param) middlewares
