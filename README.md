@@ -3,12 +3,15 @@ Middleware and more scaleable routing support for claudia API builder
 
 ####Currently done:
 - minimal middleware support
+- 4 param error handler middlewares
 
 ####Current usage:
 - copy the lib/middlewares to your project
-- require it like `const middlewares = require('path/to/the/js');`
 - with claudia api builder use like this:
+
 ```
+const middlewares = require('path/to/the/js');
+
 api.get('/hello', middlewares((req, res, next) => {
   res.data = 'hello claudiaExpress';
   next();
@@ -20,4 +23,3 @@ api.get('/hello', middlewares((req, res, next) => {
 ###TODOS:
 - create router module,
 - add the project to npm
-- recognize and use error handler(/4param) middlewares
