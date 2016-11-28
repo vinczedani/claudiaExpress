@@ -22,20 +22,27 @@ api.get('/hello', middlewares((req, res, next) => {
 ```
 ###Middleware parameters:
 req - the request object provided by claudia API builder
+
 res - object containing end(data) and fail(err) functions
 : -end will send an ok (200) response with the data object
 : -fail will send a bad request (400) response with the err !stringified!
-: -error codes can be configured at the API gateway, with using regexps like .*\[404\].*
+: -error codes can be configured at the API gateway, with using regexps like `.*\[404\].*`
 ```
 ...
 return res.fail('[404] Resource not found');
 // this will send an error response with status 404
 ...
 ```
-__next - will call the next middleware when called without parameter, will call error handler when called with parameter.__
+next - will call the next middleware when called without parameter, will call error handler when called with parameter.
+
+[err] - error object used in the error handler middlewares.
 
 ###TODOS:
 - create router module
-- add the project to npm
 - replace current 'manual' test, and write mocha tests
 - upgrade response object to be more express like
+
+Developer:
+Daniel Vincze
+Coding Sans zrt.
+http://codingsans.com/
