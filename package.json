@@ -1,7 +1,7 @@
 {
   "name": "claudiaexpress",
   "version": "0.0.3",
-  "description": "Middleware and more scaleable routing support for claudia API builder",
+  "description": "Middleware support for claudia API builder",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
