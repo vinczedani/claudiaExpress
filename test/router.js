@@ -18,7 +18,7 @@ describe('Router testing', function () {
       router.get('asd', (req, res, next) => {
         res.end('Hello RouterBase!');
       });
-      return api.callGet('asd').then(value => {
+      return api.call('get', 'asd').then(value => {
         expect(value).to.eql('Hello RouterBase!');
       });
     });

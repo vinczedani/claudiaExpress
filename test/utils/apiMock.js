@@ -21,9 +21,9 @@ class apiMock {
     });
   }
 
-  callGet(route) {
+  call(method, route) {
     for (let i = 0; i < this.endpoints.length; i++) {
-      if (this.endpoints[i].path === route && this.endpoints[i].method === 'get') {
+      if (this.endpoints[i].path === route && this.endpoints[i].method === method) {
         return this.endpoints[i].handler();
       }
     }
