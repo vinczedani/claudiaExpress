@@ -37,12 +37,15 @@ next - will call the next middleware when called without parameter, will call er
 
 [err] - error object used in the error handler middlewares.
 
+###Testing:
+`npm test`
+Runs all the mocha tests in the `./test` folder.
+
 ###TODOS:
 - create router module
-- replace current 'manual' test, and write mocha tests
 - upgrade response object to be more express like
 
 Developer:
 Daniel Vincze
-Coding Sans zrt.
+Coding Sans Zrt.
 http://codingsans.com/
