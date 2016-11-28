@@ -1,10 +1,10 @@
 {
   "name": "claudiaexpress",
   "version": "0.0.3",
-  "description": "Middleware support for claudia API builder",
+  "description": "Middleware and more scaleable routing support for claudia API builder",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./test/*.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/vinczedani/claudiaExpress/issues"
   },
-  "homepage": "https://github.com/vinczedani/claudiaExpress#readme"
+  "homepage": "https://github.com/vinczedani/claudiaExpress#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
 }
