@@ -5,7 +5,7 @@ const expect = chai.expect;
 
 const middlewares = require('../index.js').Middlewares;
 
-describe('Middleware testings', () => {
+describe('Middleware testing', () => {
   describe('Core functionality', () => {
     it('should go through the middlewares and the data attached to the param objects should work in middlewares',
     () => {
