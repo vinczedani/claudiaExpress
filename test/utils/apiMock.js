@@ -21,14 +21,39 @@ class apiMock {
     });
   }
 
+  put(route, handler) {
+    this.endpoints.push({
+      method: 'put',
+      handler: handler,
+      path: route,
+    });
+  }
+
+  delete(route, handler) {
+    this.endpoints.push({
+      method: 'delete',
+      handler: handler,
+      path: route,
+    });
+  }
+
+  options(route, handler) {
+    this.endpoints.push({
+      method: 'options',
+      handler: handler,
+      path: route,
+    });
+  }
+
   call(method, route) {
     for (let i = 0; i < this.endpoints.length; i++) {
       if (this.endpoints[i].path === route && this.endpoints[i].method === method) {
         return this.endpoints[i].handler();
       }
     }
+    console.log(method, route);
     throw new Error('Endpoint not found!');
   }
 }
 
-module.exports = new apiMock();
+module.exports = apiMock;
