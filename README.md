@@ -4,13 +4,17 @@ Express like middleware support for claudia API builder. The module is designed 
 ####Features:
 - middleware support
 - 4 param error handler middlewares
+- tree like routing
 
 ####Install:
 ```
 npm install claudiaexpress
 ```
 ###Usage:
+Only the middlewares part:
 ```
+const ApiBuilder = require('claudia-api-builder');
+const api = new ApiBuilder();
 const middlewares = require('claudiaexpress').Middlewares;
 
 api.get('/hello', middlewares((req, res, next) => {
@@ -19,6 +23,29 @@ api.get('/hello', middlewares((req, res, next) => {
   }, (req, res, next) => {
   res.end(res.data);
   }))
+```
+Router:
+```
+index.js
+
+const ApiBuilder = require('claudia-api-builder');
+const api = new ApiBuilder();
+const Router = require('claudiaexpress').Router;
+const router = Router(api);
+
+const routes = require('./routes.js');
+
+router.use(routes);
+
+module.exports = router;
+
+routes.js
+const Router = require('claudiaexpress').Router;
+const router = Router();
+
+router.get('/hello', (req, res, next) => {
+    res.end('Hello World');
+  });
 ```
 ###Middleware parameters:
 req - the request object provided by claudia API builder
@@ -42,7 +69,7 @@ next - will call the next middleware when called without parameter, will call er
 Runs all the mocha tests in the `./test` folder.
 
 ###TODOS:
-- create router module
+- !upgrade router.use() to concat path!
 - upgrade response object to be more express like
 
 Developer:
