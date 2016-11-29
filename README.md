@@ -77,6 +77,8 @@ Runs all the mocha tests in the `./test` folder.
 - upgrade router so it can be used either with the middlewares feature, or the classic claudiaJS handler
 
 Developer:
-Daniel Vincze
+
+Daniel Vincze@
 Coding Sans Zrt.
+
 http://codingsans.com/
