@@ -52,6 +52,7 @@ class apiMock {
       }
     }
     console.log(method, route);
+    console.log(this.endpoints);
     throw new Error('Endpoint not found!');
   }
 }
