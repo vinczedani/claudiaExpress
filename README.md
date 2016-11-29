@@ -38,7 +38,7 @@ const routes = require('./routes.js');
 
 router.use('v1/', routes);
 
-module.exports = router;
+module.exports = router.bootstrap();
 
 routes.js
 const Router = require('claudiaexpress').Router;
