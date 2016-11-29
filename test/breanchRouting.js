@@ -51,20 +51,20 @@ describe('Router testing', function () {
       });
 
       const routerBase = Router(api);
-      routerBase.use(router);
+      routerBase.use('v1/', router);
 
-      return api.call('get', 'asd').then(value => {
+      return api.call('get', 'v1/asd').then(value => {
         expect(value).to.eql('Hello Get!');
-        return api.call('post', 'asd');
+        return api.call('post', 'v1/asd');
       }).then(value => {
         expect(value).to.eql('Hello Post!');
-        return api.call('put', 'asd');
+        return api.call('put', 'v1/asd');
       }).then(value => {
         expect(value).to.eql('Hello Put!');
-        return api.call('options', 'asd');
+        return api.call('options', 'v1/asd');
       }).then(value => {
         expect(value).to.eql('Hello Options!');
-        return api.call('delete', 'asd');
+        return api.call('delete', 'v1/asd');
       }).then(value => {
         expect(value).to.eql('Hello Delete!');
       });
@@ -76,8 +76,8 @@ describe('Router testing', function () {
         res.end('Hello RouterBranch!');
       });
       const routerBase = Router(api);
-      routerBase.use(router);
-      return api.call('get', 'asd').then(value => {
+      routerBase.use('v1/', router);
+      return api.call('get', 'v1/asd').then(value => {
         expect(value).to.eql('Hello RouterBranch!');
       });
     });
