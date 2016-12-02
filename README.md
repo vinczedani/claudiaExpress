@@ -73,6 +73,8 @@ Runs all the mocha tests in the `./test` folder.
 
 ###TODOS:
 - upgrade response object to be more express like
+- !add headers support!
+- normal status code setting
 - add istanbul and more tests for 100% coverage
 - upgrade router so it can be used either with the middlewares feature, or the classic claudiaJS handler
 
