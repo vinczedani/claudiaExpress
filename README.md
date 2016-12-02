@@ -37,18 +37,21 @@ router.get('/hello', (req, res, next) => {
 router.use('more/', endpoints); // these should be accessed through url/v1/more/...
 ```
 ###Middleware parameters:
-req - the request object provided by claudia API builder
+req
+- the request object provided by claudia API builder
 
 res
-: - res.end(data) will send data, default status code is 200
-: - res.fail(err, status) will send error response, default status code is 500
-: - res.status(status) will set the status of the message you send at res.end();
-: - res.headers is an object, to add a header use `res.headers.MyHeader = 'ASD';`
-: - res.sendStatus(status) will send a response without response body with given status (or 200, if status is not given)
+- res.end(data) will send data, default status code is 200
+- res.fail(err, status) will send error response, default status code is 500
+- res.status(status) will set the status of the message you send at res.end();
+- res.headers is an object, to add a header use `res.headers.MyHeader = 'ASD';`
+- res.sendStatus(status) will send a response without response body with given status (or 200, if status is not given)
 
-next() - will call the next middleware when called without parameter, will call error handler when called with parameter.
+next()
+- will call the next middleware when called without parameter, will call error handler when called with parameter.
 
-[err] - error object used in the error handler middlewares.
+[err]
+- error object used in the error handler middlewares.
 
 ###Testing:
 `npm test`
