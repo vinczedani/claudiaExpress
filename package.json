@@ -1,6 +1,6 @@
 {
   "name": "claudiaexpress",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Middleware and more scaleable routing support for claudia API builder",
   "main": "index.js",
   "scripts": {
