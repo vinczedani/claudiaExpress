@@ -11,21 +11,7 @@ Express like middleware support for claudia API builder. The module is designed 
 npm install claudiaexpress
 ```
 ###Usage:
-####Only the middlewares part:
-```
-const ApiBuilder = require('claudia-api-builder');
-const api = new ApiBuilder();
-const middlewares = require('claudiaexpress').Middlewares;
 
-api.get('/hello', middlewares((req, res, next) => {
-  res.data = 'hello claudiaExpress';
-  next();
-  }, (req, res, next) => {
-  res.end(res.data);
-  }))
-```
-####Router:
-Please note, that router using the middlewares feature be default.
 ```
 index.js
 
@@ -53,17 +39,14 @@ router.use('more/', endpoints); // these should be accessed through url/v1/more/
 ###Middleware parameters:
 req - the request object provided by claudia API builder
 
-res - object containing end(data) and fail(err) functions
-: -end will send an ok (200) response with the data object
-: -fail will send a bad request (400) response with the err !stringified!
-: -error codes can be configured at the API gateway, with using regexps like `.*\[404\].*`
-```
-...
-return res.fail('[404] Resource not found');
-// this will send an error response with status 404
-...
-```
-next - will call the next middleware when called without parameter, will call error handler when called with parameter.
+res
+: - res.end(data) will send data, default status code is 200
+: - res.fail(err, status) will send error response, default status code is 500
+: - res.status(status) will set the status of the message you send at res.end();
+: - res.headers is an object, to add a header use `res.headers.MyHeader = 'ASD';`
+: - res.sendStatus(status) will send a response without response body with given status (or 200, if status is not given)
+
+next() - will call the next middleware when called without parameter, will call error handler when called with parameter.
 
 [err] - error object used in the error handler middlewares.
 
@@ -73,8 +56,6 @@ Runs all the mocha tests in the `./test` folder.
 
 ###TODOS:
 - upgrade response object to be more express like
-- !add headers support!
-- normal status code setting
 - add istanbul and more tests for 100% coverage
 - upgrade router so it can be used either with the middlewares feature, or the classic claudiaJS handler
 
