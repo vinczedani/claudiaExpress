@@ -63,5 +63,26 @@ describe('Middleware testing', () => {
         expect(err.message).to.eql('The provided middleware is not a function!');
       });
     });
+
+    it('should give unhandled exception to errorhandler',
+    () => {
+      function mw1(req, res, next) {
+        throw new Error('Unhandled error');
+      }
+
+      function mw2(req, res, next) {
+        // this should not be reached
+        expect(true).to.eql(false);
+      }
+
+      function mw3(req, res, next, err) {
+        return res.end('Unhandled exception is now handled!');
+      }
+
+      return middlewares(mw1, mw2, mw3)()
+      .then(value => {
+        expect(value).to.eql('Unhandled exception is now handled!');
+      });
+    });
   });
 });
