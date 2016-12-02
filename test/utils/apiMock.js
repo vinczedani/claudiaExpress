@@ -3,6 +3,14 @@
 class apiMock {
   constructor() {
     this.endpoints = [];
+
+    this.ApiResponse = function(body, headers, status) {
+      return {
+        body: body,
+        headers: headers,
+        status: status,
+      };
+    }
   }
 
   get(route, handler) {
