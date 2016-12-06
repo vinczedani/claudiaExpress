@@ -11,7 +11,8 @@
     "url": "git+https://github.com/vinczedani/claudiaExpress.git"
   },
   "author": "Daniel Vincze <vinczedani22@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
+  "keywords": ["claudia", "claudiajs", "claudiaexpress", "express", "middleware", "router"],
   "bugs": {
     "url": "https://github.com/vinczedani/claudiaExpress/issues"
   },
