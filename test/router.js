@@ -24,7 +24,7 @@ describe('Router testing', function () {
         res.end('Hello RouterBase!');
       });
       return api.call('get', 'asd').then(value => {
-        expect(value).to.eql('Hello RouterBase!');
+        expect(value.body).to.eql('Hello RouterBase!');
       });
     });
   });
