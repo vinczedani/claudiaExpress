@@ -1,3 +1,5 @@
+# This Fork to implement suppport middelware in method "use"
+
 # claudiaExpress
 Express like middleware support for claudia API builder. The module is designed for developers who come from the express framework but want to try out AWS Lambda. ClaudiaJS with Claudia API builder is an easy way to start.
 
