@@ -81,5 +81,57 @@ describe('Router testing', function () {
         expect(value.body).to.eql('Hello RouterBranch!');
       });
     });
+
+    it('should support middleware before in method use', () => {
+      const router = Router();
+      router.get('asd', (req, res, next) => {
+        res.end('Hello RouterBranch!');
+      });
+      router.get('asd2', (req, res, next) => {
+        res.end('Hello RouterBranch2!');
+      });
+
+      const mw = (req, res, next) => {
+        res.end('This is middleware for interrupt handler')
+      };
+
+      const routerBase = Router(api);
+      routerBase.use('v1/', mw, router);
+
+      return api.call('get', 'v1/asd').then(value => {
+        expect(value.body).to.eql('This is middleware for interrupt handler');
+        return api.call('get', 'v1/asd2');
+      }).then(value => {
+        expect(value.body).to.eql('This is middleware for interrupt handler');
+      });
+    });
+
+    it('should support middleware after in method use', () => {
+      const router = Router();
+      router.get('asd', (req, res, next) => {
+        next();
+      });
+      router.get('asd2', (req, res, next) => {
+        next();
+      });
+
+      const mwBefore = (req, res, next) => {
+        next();
+      };
+
+      const mwAfter = (req, res, next) => {
+        res.end('This is middleware after handler')
+      };
+
+      const routerBase = Router(api);
+      routerBase.use('v1/', mwBefore, router, mwAfter);
+
+      return api.call('get', 'v1/asd').then(value => {
+        expect(value.body).to.eql('This is middleware after handler');
+        return api.call('get', 'v1/asd2');
+      }).then(value => {
+        expect(value.body).to.eql('This is middleware after handler');
+      });
+    });
   });
 });
