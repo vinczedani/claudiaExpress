@@ -57,4 +57,17 @@ describe('Header and status tests', function () {
       expect(value.status).to.eql(404);
     });
   });
+
+  it('should be return json data', () => {
+    const router = Router(api);
+    router.get('json-sample', (req, res, next) => {
+      res.json({
+        message: 'this is json format'
+      });
+    });
+    return api.call('get', 'json-sample').then(value => {
+      expect(value.status).to.eql(200);
+      expect(value.body.message).to.eql('this is json format');
+    });
+  });
 });
