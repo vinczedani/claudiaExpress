@@ -7,6 +7,10 @@ Express like middleware support for claudia API builder. The module is designed 
 - middleware support
 - 4 param error handler middlewares
 - tree like routing
+- middleware support on "use" method
+```
+router.use('more/', mw1, mw2, endpoints, mw3, mw4);
+```
 
 ####Install:
 ```
